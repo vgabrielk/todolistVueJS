@@ -5,6 +5,7 @@
     <p> ✔️ </p>
   </div>
   <div class="tasks">
+    <div class="row">
     <h1>Tasks</h1>
     <input
     placeholder="Type to add a new task"
@@ -14,6 +15,7 @@
       v-model="currentTask"
     />
     <button @click="addTask">Add a new task</button>
+    </div>
     <div class="tasks-content">
       <div v-for="(task, index) in tasks" :key="index">
         <ul @click="addBackground">
@@ -71,13 +73,14 @@ export default {
   color:#31f500
 }
 input {
-  width: 40%;
+  width: 20%;
   height: 20px;
   border-radius: 10px;
   padding: 15px;
   background: transparent;
   box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.585);
   color: #31f500;
+  margin-right: 1rem;
 }
 input::-webkit-input-placeholder{
   color: #fafafa;
@@ -160,6 +163,5 @@ span {
   justify-content: space-between;
   align-items: center;
   transition: .5s ease;
-  opacity: .9;
 }
 </style>

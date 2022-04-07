@@ -24,6 +24,19 @@ body {
   background-color: #222;
   color: #fafafa;
 }
+body::-webkit-scrollbar{
+  width: 8px;
+  border-radius: 8px;
+  background-color: #111; 
+}
+body::-webkit-scrollbar-button{
+  background-color: #31f500 ;
+  border-radius:12px;
+}
+body::-webkit-scrollbar-thumb{
+  background-color: #444 ;
+  border-radius:12px;
+}
 * {
   margin: 0;
   padding: 0;
