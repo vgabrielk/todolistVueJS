@@ -3,9 +3,10 @@
   <div class="tasks">
     <h1>Tasks</h1>
     <input
+    placeholder="Type to add a new task"
       maxlength="22"
       type="text"
-      @keyup.enter="inputSubmit"
+      @keypress.enter="inputSubmit"
       v-model="currentTask"
     />
     <button @click="addTask">Add a new task</button>
@@ -22,6 +23,7 @@
 
 <script>
 export default {
+
   data() {
     return {
       name: "Tasks",
@@ -35,7 +37,8 @@ export default {
         this.tasks.push({
           title: this.currentTask,
         });
-        this.currentTask = "";
+        this.currentTask = ""
+
       }
     },
     inputSubmit() {
@@ -55,6 +58,7 @@ export default {
   flex-direction: column;
   padding: 5rem;
   justify-content: center;
+  color:#31f500
 }
 input {
   width: 30%;
@@ -62,8 +66,8 @@ input {
   border-radius: 10px;
   padding: 15px;
   background: transparent;
-  color: #31f500;
   box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.585);
+  color: #31f500;
 }
 button {
   margin-top: 1rem;
@@ -72,9 +76,10 @@ button {
   border-radius: 10px;
   padding: 10px;
   cursor: pointer;
-  color: #fafafa;
+  color: #31f500;
   transition: 0.5s ease;
   width: 20%;
+  font-weight: bold;
 }
 button:hover {
   transform: translateY(-5px);
@@ -117,7 +122,7 @@ span {
   width: 40px;
   font-size: 1.5rem;
   font-weight: bold;
-  color: red;
+  color: rgb(172, 172, 172);
 }
 .tasks-content {
   width: 200px;
