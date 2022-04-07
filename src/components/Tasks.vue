@@ -73,14 +73,13 @@ export default {
   color:#31f500
 }
 input {
-  width: 20%;
+  width: 250px;
   height: 20px;
   border-radius: 10px;
   padding: 15px;
   background: transparent;
   box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.585);
   color: #31f500;
-  margin-right: 1rem;
 }
 input::-webkit-input-placeholder{
   color: #fafafa;
@@ -97,6 +96,7 @@ button {
   transition: 0.5s ease;
   width: 20%;
   font-weight: bold;
+  transform: scale(.9);
 }
 button:hover {
   transform: translateY(-5px);
@@ -108,6 +108,7 @@ button:hover {
   }
   .tasks {
     align-items: center;
+    padding: 2rem;
   }
 }
 ul {
