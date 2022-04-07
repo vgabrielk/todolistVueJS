@@ -1,12 +1,17 @@
 
 <template>
   <div class="tasks">
-  <h1>Tasks</h1>
-  <input maxlength="22" type="text" @keyup.enter="inputSubmit" v-model="currentTask" />
-  <button @click="addTask">Add a new task</button>
+    <h1>Tasks</h1>
+    <input
+      maxlength="22"
+      type="text"
+      @keyup.enter="inputSubmit"
+      v-model="currentTask"
+    />
+    <button @click="addTask">Add a new task</button>
     <div class="tasks-content">
       <div v-for="(task, index) in tasks" :key="index">
-        <ul>
+        <ul @click="addBackground">
           <li>{{ task.title }}</li>
           <span @click="removeTask(task)">&times;</span>
         </ul>
@@ -17,13 +22,13 @@
 
 <script>
 export default {
-  name: "Tasks",
   data() {
     return {
+      name: "Tasks",
+      currentTask: "",
       tasks: [],
     };
   },
-  currentTask: "",
   methods: {
     addTask() {
       if (this.currentTask.length >= 1) {
@@ -50,7 +55,6 @@ export default {
   flex-direction: column;
   padding: 5rem;
   justify-content: center;
-
 }
 input {
   width: 30%;
@@ -71,16 +75,16 @@ button {
   color: #fafafa;
   transition: 0.5s ease;
   width: 20%;
-
 }
 button:hover {
   transform: translateY(-5px);
 }
-@media(max-width: 768px){
-  input, button{
+@media (max-width: 768px) {
+  input,
+  button {
     width: 100%;
   }
-  .tasks{
+  .tasks {
     align-items: center;
   }
 }
@@ -96,14 +100,15 @@ ul {
   align-items: center;
   cursor: pointer;
   height: 35px;
-
+  font-weight: bold;
   border-radius: 10px;
   position: relative;
 }
 span {
   position: absolute;
-  right: 0;
-  background: red;
+  right: -2rem;
+  background: transparent;
+  box-shadow: 4px 0px 18px black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -112,8 +117,15 @@ span {
   width: 40px;
   font-size: 1.5rem;
   font-weight: bold;
+  color: red;
 }
 .tasks-content {
   width: 200px;
+}
+
+.isdone {
+  background: transparent;
+  position: absolute;
+  right: -2rem;
 }
 </style>
