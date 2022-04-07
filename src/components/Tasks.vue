@@ -1,5 +1,9 @@
 
 <template>
+  <div v-if="addedTask" class="success">
+    <h5>Task added with success </h5>
+    <p> ✔️ </p>
+  </div>
   <div class="tasks">
     <h1>Tasks</h1>
     <input
@@ -29,6 +33,7 @@ export default {
       name: "Tasks",
       currentTask: "",
       tasks: [],
+      addedTask : false
     };
   },
   methods: {
@@ -37,10 +42,15 @@ export default {
         this.tasks.push({
           title: this.currentTask,
         });
-        this.currentTask = ""
-
+        this.currentTask = "",
+          this.addedTask = true
       }
+          setTimeout(() =>{
+      this.addedTask = false
+    },1000)
     },
+
+
     inputSubmit() {
       this.addTask();
     },
@@ -61,13 +71,17 @@ export default {
   color:#31f500
 }
 input {
-  width: 30%;
+  width: 40%;
   height: 20px;
   border-radius: 10px;
   padding: 15px;
   background: transparent;
   box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.585);
   color: #31f500;
+}
+input::-webkit-input-placeholder{
+  color: #fafafa;
+  font-size: .680rem;
 }
 button {
   margin-top: 1rem;
@@ -132,5 +146,20 @@ span {
   background: transparent;
   position: absolute;
   right: -2rem;
+}
+.success{
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
+  width: 250px;
+  height: 60px;
+  background: #111;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: .5s ease;
+  opacity: .9;
 }
 </style>
