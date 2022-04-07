@@ -106,8 +106,8 @@ ul {
 }
 span {
   position: absolute;
-  right: -2rem;
-  background: transparent;
+  right: -1rem;
+  background: #222;
   box-shadow: 4px 0px 18px black;
   display: flex;
   justify-content: center;
