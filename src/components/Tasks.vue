@@ -2,7 +2,7 @@
 <template>
   <div class="tasks">
   <h1>Tasks</h1>
-  <input maxlength="12" type="text" @keyup.enter="inputSubmit" v-model="currentTask" />
+  <input maxlength="22" type="text" @keyup.enter="inputSubmit" v-model="currentTask" />
   <button @click="addTask">Add a new task</button>
     <div class="tasks-content">
       <div v-for="(task, index) in tasks" :key="index">
