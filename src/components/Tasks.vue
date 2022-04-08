@@ -9,8 +9,8 @@
       <h1>Lista de tarefas</h1>
       <input
         placeholder="Escreva para adicionar uma nova tarefa!"
-        maxlength="22"
         type="text"
+        maxlength="18"
         @keypress.enter="inputSubmit"
         v-model="currentTask"
       />
@@ -35,6 +35,7 @@ export default {
       currentTask: "",
       tasks: [],
       addedTask: false,
+      char18: false,
     };
   },
   methods: {
@@ -43,11 +44,12 @@ export default {
         this.tasks.push({
           title: this.currentTask,
         });
-        (this.currentTask = ""), (this.addedTask = true);
+        this.currentTask = "", (this.addedTask = true);
       }
       setTimeout(() => {
         this.addedTask = false;
-      }, 2000);
+      },1000);
+      
     },
 
     inputSubmit() {
@@ -68,9 +70,10 @@ export default {
   justify-content: center;
   color: #31f500;
 }
+
 .border {
   height: auto;
-  width: auto;
+  width: 100%;
   border: 1px solid #333;
   border-radius: 12px;
   margin: .2rem 0;
@@ -80,6 +83,7 @@ export default {
   color: #fafafa;
 }
 input {
+  margin-top: .8rem;
   width: 250px;
   height: 20px;
   border-radius: 10px;
@@ -112,7 +116,7 @@ button:hover {
 ul {
   background: transparent;
   box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.585);
-  width: 100%;
+  width: 280px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -140,13 +144,13 @@ span {
   padding: 0 1rem;
 }
 .tasks-content {
-  width: 200px;
+  width: auto;
 }
 
 .success {
   position: fixed;
   left: 2rem;
-  top: 1rem;
+  top: 2rem;
   width: 250px;
   height: 60px;
   background: #111;
@@ -168,6 +172,7 @@ span {
   place-items: center;
   color: #31f500;
 }
+
 @keyframes notification {
   from {
     transform: translateY(-50px);
