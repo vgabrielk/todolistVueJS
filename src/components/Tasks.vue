@@ -153,7 +153,7 @@ span {
 }
 .success{
   position: fixed;
-  right: 1rem;
+  left: 2rem;
   top: 1rem;
   width: 250px;
   height: 60px;
@@ -164,5 +164,6 @@ span {
   justify-content: space-between;
   align-items: center;
   transition: .5s ease;
+  z-index: 100;
 }
 </style>
