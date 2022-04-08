@@ -14,7 +14,7 @@
         @keypress.enter="inputSubmit"
         v-model="currentTask"
       />
-      <button @click="addTask">Adicionar uma tarefa</button>
+      <button @click="addTask">Adicionar tarefa</button>
     </div>
     <div class="border" v-for="(task, index) in tasks" :key="index">
       <div class="tasks-content">
@@ -83,7 +83,7 @@ input {
   width: 250px;
   height: 20px;
   border-radius: 10px;
-  padding: 15px;
+  padding: 24px;
   background: transparent;
   box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.585);
   color: #31f500;
@@ -97,7 +97,7 @@ button {
   background: transparent;
   box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.585);
   border-radius: 10px;
-  padding: 10px;
+  padding: 20px;
   cursor: pointer;
   color: #fafafa;
   transition: 0.5s ease;
